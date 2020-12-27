@@ -22,9 +22,16 @@ const getCostsForCrop = (cropCosts) => {
     return totalCosts;
 };
 
+const getRevenueForCrop = (salePrice) => {
+    let total = 0;
+    salePrice.forEach((item) => (total = total + item.crop.yield * item.price));
+    return total;
+};
+
 module.exports = {
     getYieldForPlant,
     getYieldForCrop,
     getTotalYield,
     getCostsForCrop,
+    getRevenueForCrop,
 };
