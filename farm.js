@@ -15,7 +15,11 @@ const getTotalYield = (crops) => {
 };
 
 const getCostsForCrop = (cropCosts) => {
-    return cropCosts.crop.amount * cropCosts.sowingPrice;
+    let totalCosts = 0;
+    cropCosts.forEach((crop) => {
+        return (totalCosts = totalCosts + crop.crop.amount * crop.sowingPrice);
+    });
+    return totalCosts;
 };
 
 module.exports = {

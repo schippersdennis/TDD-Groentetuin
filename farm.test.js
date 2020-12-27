@@ -58,12 +58,35 @@ describe('getTotalYield', () => {
 });
 
 describe('getCostsForCrop', () => {
-    test('Calculate the sowing costs for a single Crop ', () => {
-        const crop = {
-            name: 'corn',
+    test('Calculate the total of costs of a Single Crop ', () => {
+        const corn = {
+            corp: 'corn',
             amount: 230,
         };
-        const cropSowingCosts = { crop, sowingPrice: 1 };
-        expect(getCostsForCrop(cropSowingCosts)).toBe(230);
+
+        const cropCosts = [{ crop: corn, sowingPrice: 1 }];
+        expect(getCostsForCrop(cropCosts)).toBe(230);
+    });
+
+    test('Calculate the total of costs of Multiple Crops', () => {
+        const corn = {
+            corp: 'corn',
+            amount: 230,
+        };
+        const carrots = {
+            corp: 'carrots',
+            amount: 4430,
+        };
+        const kale = {
+            corp: 'kale',
+            amount: 1430,
+        };
+
+        const cropCosts = [
+            { crop: corn, sowingPrice: 1 },
+            { crop: carrots, sowingPrice: 1 },
+            { crop: kale, sowingPrice: 1 },
+        ];
+        expect(getCostsForCrop(cropCosts)).toBe(6090);
     });
 });
