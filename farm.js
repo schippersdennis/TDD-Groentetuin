@@ -6,18 +6,6 @@ const getYieldForCrop = (input) => {
     return input.crop.yield * input.numCrops;
 };
 
-const corn = {
-    name: 'corn',
-    yield: 3,
-};
-const pumpkin = {
-    name: 'pumpkin',
-    yield: 4,
-};
-const crops = [
-    { crop: corn, numCrops: 5 },
-    { crop: pumpkin, numCrops: 2 },
-];
 const getTotalYield = (crops) => {
     let total = 0;
     crops.crops.forEach((item) => {
