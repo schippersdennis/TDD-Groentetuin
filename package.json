@@ -1,18 +1,26 @@
 {
-  "name": "TDD_groentetuin",
-  "version": "1.0.0",
-  "description": "",
-  "main": "functions.js",
-  "scripts": {
-    "test": "jest"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "jest": "^26.6.3"
-  },
-  "bundleDependencies": [
-    "jest --watchAll"
-  ]
+    "name": "TDD_groentetuin",
+    "version": "1.0.0",
+    "description": "",
+    "main": "functions.js",
+    "scripts": {
+        "test": "jest --watchAll"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/schippersdennis/TDD-Groentetuin.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/schippersdennis/TDD-Groentetuin/issues"
+    },
+    "homepage": "https://github.com/schippersdennis/TDD-Groentetuin#readme",
+    "dependencies": {
+        "jest": "^26.6.3"
+    },
+    "bundleDependencies": [
+        "jest"
+    ]
 }
