@@ -1,4 +1,9 @@
-const { getYieldForPlant, getYieldForCrop, getTotalYield } = require('./farm');
+const {
+    getYieldForPlant,
+    getYieldForCrop,
+    getTotalYield,
+    getCostsForCrop,
+} = require('./farm');
 
 describe('getYieldForPlant', () => {
     const corn = {
@@ -25,29 +30,40 @@ describe('getYieldForCrop', () => {
     });
 });
 
-// describe('getTotalYield', () => {
-//     test('Calculate total yield with multiple crops', () => {
-//         const corn = {
-//             name: 'corn',
-//             yield: 3,
-//         };
-//         const pumpkin = {
-//             name: 'pumpkin',
-//             yield: 4,
-//         };
-//         const crops = [
-//             { crop: corn, numCrops: 5 },
-//             { crop: pumpkin, numCrops: 2 },
-//         ];
-//         expect(getTotalYield({ crops })).toBe(23);
-//     });
+describe('getTotalYield', () => {
+    test('Calculate total yield with multiple crops', () => {
+        const corn = {
+            name: 'corn',
+            yield: 3,
+        };
+        const pumpkin = {
+            name: 'pumpkin',
+            yield: 4,
+        };
+        const crops = [
+            { crop: corn, numCrops: 5 },
+            { crop: pumpkin, numCrops: 2 },
+        ];
+        expect(getTotalYield({ crops })).toBe(23);
+    });
 
-//     test('Calculate total yield with 0 amount', () => {
-//         const corn = {
-//             name: 'corn',
-//             yield: 3,
-//         };
-//         const crops = [{ crop: corn, numCrops: 0 }];
-//         expect(getTotalYield({ crops })).toBe(0);
-//     });
-// });
+    test('Calculate total yield with 0 amount', () => {
+        const corn = {
+            name: 'corn',
+            yield: 3,
+        };
+        const crops = [{ crop: corn, numCrops: 0 }];
+        expect(getTotalYield({ crops })).toBe(0);
+    });
+});
+
+describe('getCostsForCrop', () => {
+    test('Calculate the sowing costs for a single Crop ', () => {
+        const crop = {
+            name: 'corn',
+            amount: 230,
+        };
+        const cropSowingCosts = { crop, sowingPrice: 1 };
+        expect(getCostsForCrop(cropSowingCosts)).toBe(230);
+    });
+});
