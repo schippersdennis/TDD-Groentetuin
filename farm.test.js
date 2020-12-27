@@ -11,19 +11,19 @@ describe('getYieldForPlant', () => {
     });
 });
 
-// describe('getYieldForCrop', () => {
-//     test('Get yield for crop, simple', () => {
-//         const corn = {
-//             name: 'corn',
-//             yield: 3,
-//         };
-//         const input = {
-//             crop: corn,
-//             numCrops: 10,
-//         };
-//         expect(getYieldForCrop(input)).toBe(30);
-//     });
-// });
+describe('getYieldForCrop', () => {
+    test('Get yield for crop, simple', () => {
+        const corn = {
+            name: 'corn',
+            yield: 3,
+        };
+        const input = {
+            crop: corn,
+            numCrops: 10,
+        };
+        expect(getYieldForCrop(input)).toBe(30);
+    });
+});
 
 // describe('getTotalYield', () => {
 //     test('Calculate total yield with multiple crops', () => {
