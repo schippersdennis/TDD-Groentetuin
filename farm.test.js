@@ -3,6 +3,7 @@ const {
     getYieldForCrop,
     getTotalYield,
     getCostsForCrop,
+    getRevenueForCrop,
 } = require('./farm');
 
 describe('getYieldForPlant', () => {
@@ -88,5 +89,70 @@ describe('getCostsForCrop', () => {
             { crop: kale, sowingPrice: 1 },
         ];
         expect(getCostsForCrop(cropCosts)).toBe(6090);
+    });
+});
+
+describe('getRevenueForCrop', () => {
+    test('Get the Revenue of a single crop', () => {
+        const corn = {
+            name: 'corn',
+            yield: 9000,
+            factors: {
+                sun: {
+                    low: -50,
+                    medium: 0,
+                    high: 50,
+                },
+            },
+        };
+
+        const salePrice = [{ crop: corn, price: 4 }];
+
+        expect(getRevenueForCrop(salePrice)).toBe(36000);
+    });
+
+    test('Get the Revenue for multiple cops', () => {
+        const corn = {
+            name: 'corn',
+            yield: 9000,
+            factors: {
+                sun: {
+                    low: -50,
+                    medium: 0,
+                    high: 50,
+                },
+            },
+        };
+        const kale = {
+            name: 'kale',
+            yield: 3000,
+            factors: {
+                sun: {
+                    low: -50,
+                    medium: 0,
+                    high: 50,
+                },
+            },
+        };
+
+        const carrots = {
+            name: 'carrots',
+            yield: 1200,
+            factors: {
+                sun: {
+                    low: -50,
+                    medium: 0,
+                    high: 50,
+                },
+            },
+        };
+
+        const salePrice = [
+            { crop: corn, price: 4 },
+            { crop: kale, price: 6 },
+            { crop: carrots, price: 5 },
+        ];
+
+        expect(getRevenueForCrop(salePrice)).toBe(60000);
     });
 });
