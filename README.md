@@ -49,3 +49,13 @@ Let's say an avocado plant has a standard yield of 3 pounds. In addition, let's 
 And let's say that now there is not only a lot of sun, but also a lot of wind. Then we can calculate the yield like this: 3 kg * 150% * 40% = 1.8 kg.
 If there is a factor that does not affect a particular plant species, then you do not have to include it. Example:
 The growth of avocado plants is not affected by the soil type. If the avocado plant grows on clay, that factor has no influence on how many kilos of avocados an avocado plant produces. If other plants grow in the vegetable garden that are affected by this, you must of course take this into account.
+
+## Then add functionality step by step. 
+
+**Use the TDD cycle at the top of this command. Add the functionality in the following steps:**
+>- calculate the cost for a crop: getCostsForCrop
+>- calculate earnings for a crop (without environmental factors): getRevenueForCrop
+>- calculate the profit for a crop (without environmental factors): getProfitGorCrop
+>- calculate the profit for multiple crops (without environmental factors): getTotalProfit
+__(BONUS) You can take the following steps by modifying the previously written functions. So you do not write new functions. This means that you must check in the position whether or not relevant environmental factors have been included.__
+>- take environmental factors into account when calculating the yield (in kilos) of a plant: getYieldForPlant, use the following data structures:
