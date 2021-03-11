@@ -57,5 +57,5 @@ The growth of avocado plants is not affected by the soil type. If the avocado pl
 >- calculate earnings for a crop (without environmental factors): getRevenueForCrop
 >- calculate the profit for a crop (without environmental factors): getProfitGorCrop
 >- calculate the profit for multiple crops (without environmental factors): getTotalProfit
-__(BONUS) You can take the following steps by modifying the previously written functions. So you do not write new functions. This means that you must check in the position whether or not relevant environmental factors have been included.__
+__**(BONUS) You can take the following steps by modifying the previously written functions. So you do not write new functions. This means that you must check in the position whether or not relevant environmental factors have been included.**__
 >- take environmental factors into account when calculating the yield (in kilos) of a plant: getYieldForPlant, use the following data structures:
